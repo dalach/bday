@@ -1,30 +1,26 @@
-<button><%= link_to 'New Wish', new_wish_path %></button>
+<div class="row">
+  <div class="large-4 columns"></div>
+  <div class="large-8 columns hand-written">
+    <%= link_to 'Say something nice', new_wish_path %>
+  </div>
+</div>
 
 
-
-<table>
-  <thead>
-    <tr>
-      <th>From</th>
-      <th>Wishes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @wishes.each do |wish| %>
-      <tr>
-        <td><%= wish.from %></td>
-        <td><%= wish.wishes %></td>
-        <td><%= link_to 'Show', wish %></td>
-        <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
-        <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<% @wishes.each do |wish| %>
+  <div class="all_wishes">
+    <div class="row">
+      <div class="large-1 columns hand-written">
+        From:
+      </div>
+      <div class="large-11 columns hand-written">
+        <%= wish.from %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-1 columns"></div>
+      <div class="large-11 columns">
+        <%= wish.wishes %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -6,35 +6,43 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
-
+    <!-- favicon -->
+    <link rel="shortcut icon" href="<%= asset_path ('favicon.ico') %>" >
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Happy Birtday!" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body>
 
-    <div class="row">
+    <div class="row content">
       <div class="large-12 columns">
         <h1>Happy Birthday, Alicja!</h1>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row content">
       <div class="large-12 columns">
         <%= yield %>
       </div>
     </div>
 
-
+    <div class="row">
+      <footer class="large-12 columns">
+        29.08.2013, made for <a href="https://twitter.com/bike_lover_ka">Alicja Cyganiewicz</a> by <a href="https://twitter.com/wdalach">Wiktoria Dalach</a>
+      </footer>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
