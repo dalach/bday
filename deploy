@@ -6,5 +6,6 @@ rake assets:precompile
 git add -f .
 git commit -m "deploy with assets"
 git push heroku deploy:master --force
+heroku run rake --trace db:migrate
 git checkout master
 git branch -D deploy
