@@ -7,7 +7,7 @@
 
 <p>
   <strong>Wishes:</strong>
-  <%= @wish.wishes %>
+  <%=raw @wish.wishes %>
 </p>
 
 <%= link_to 'Edit', edit_wish_path(@wish) %> |
